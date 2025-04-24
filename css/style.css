@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');  /* Changed to Poppins for a modern look */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    background: url("../img/bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif; /* Premium modern font */
+    position: relative;
+}
+
+.scoreboard {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background with darker shade */
+    color: #fff;
+    padding: 20px 30px;
+    border-radius: 15px;
+    border: 2px solid #ffd700; /* Gold border for a premium feel */
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6); /* Gold glow effect */
+    font-weight: 600;
+}
+
+.scoreboard h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #ffd700; /* Golden color for the title */
+    text-transform: uppercase; /* Adds emphasis */
+}
+
+.scoreboard p {
+    font-size: 24px;
+    margin: 5px 0;
+    font-weight: 500;
+}
+
+#board {
+    background: linear-gradient(145deg, rgba(170, 236, 170, 0.9), rgba(236, 236, 167, 0.8)); /* Soft gradient background */
+    width: 90vmin;
+    height: 92vmin;
+    border: 2px solid #333; /* Dark border for contrast */
+    display: grid;
+    grid-template-rows: repeat(18, 1fr);
+    grid-template-columns: repeat(18, 1fr);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); /* Darker shadow for depth */
+    border-radius: 10px;
+}
+
+.head {
+    background: linear-gradient(145deg, rgba(240, 124, 124, 0.9), rgba(228, 228, 129, 0.8));
+    border: 2px solid #600; /* Dark red border */
+    transform: scale(1.05);
+    border-radius: 10px;
+    animation: pulse 1s ease-out infinite; /* Subtle pulse animation */
+}
+
+.snake {
+    background-color: #6a0dad;
+    border: 0.25vmin solid #fff;
+    border-radius: 12px;
+    animation: glide 0.2s ease-out infinite; /* Subtle glide effect */
+}
+
+.food {
+    background: linear-gradient(145deg, red, purple);
+    border: 0.25vmin solid black;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+    animation: bounce 0.3s ease-out infinite; /* Food bounce effect */
+}
+
+/* Animations */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes glide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(0.5vmin);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
